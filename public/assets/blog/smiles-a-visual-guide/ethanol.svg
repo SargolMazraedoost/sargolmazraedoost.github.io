@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-labelledby="title">
+  <title id="title">Ethanol: CH₃–CH₂–OH</title>
+  <g stroke="#797593" stroke-width="3"><path d="M121 60H205M275 60H359"/></g>
+  <g font-family="Arial,sans-serif" font-size="34" text-anchor="middle" fill="#575279">
+    <text x="85" y="72">CH₃</text><text x="240" y="72">CH₂</text><text x="395" y="72" fill="#b4637a">OH</text>
+  </g>
+</svg>

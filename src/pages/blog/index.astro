@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Group posts by year
+const postsByYear = sortedPosts.reduce((acc, post) => {
+  const year = post.data.pubDate.getFullYear();
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(post);
+  return acc;
+}, {} as Record<number, typeof sortedPosts>);
+
+const years = Object.keys(postsByYear)
+  .map(Number)
+  .sort((a, b) => b - a);
+---
+
+<BaseLayout title="Blog" description="Essays, notes, and technical articles.">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title" style="margin-bottom: 25px;">Blog</h1>
+    </header>
+
+    <div class="post-content">
+      {years.length === 0 && <p>Research notes will be shared here.</p>}
+      {years.map((year) => (
+        <div style="margin-bottom: 30px;">
+          <h2 class="post-year-heading" style="margin-top: 20px; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 5px;">
+            {year}
+          </h2>
+          {postsByYear[year].map((post) => (
+            <article class="blogpost-item">
+              <span class="blogpost-item-date">
+                <i class="fas fa-calendar font-awesome-recent-posts-calendar"></i>
+                {post.data.pubDate.toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: '2-digit',
+                  year: 'numeric',
+                })}
+              </span>
+              <h4 class="blogpost-item-title">
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+              </h4>
+            </article>
+          ))}
+        </div>
+      ))}
+    </div>
+  </article>
+</BaseLayout>

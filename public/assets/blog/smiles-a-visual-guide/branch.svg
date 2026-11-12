@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" role="img" aria-labelledby="title">
+  <title id="title">Propan-2-ol: CH₃–CH(OH)–CH₃</title>
+  <g stroke="#797593" stroke-width="3"><path d="M121 132H205M275 132H359M240 100V64"/></g>
+  <g font-family="Arial,sans-serif" font-size="34" text-anchor="middle" fill="#575279">
+    <text x="85" y="144">CH₃</text><text x="240" y="144">CH</text><text x="395" y="144">CH₃</text><text x="240" y="48" fill="#b4637a">OH</text>
+  </g>
+</svg>

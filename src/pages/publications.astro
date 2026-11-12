@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, PUBLICATIONS } from '../data/siteConfig';
+import { CONFERENCES } from '../data/conferences';
+import { BOOK_CHAPTERS } from '../data/bookChapters';
+---
+
+<BaseLayout title="Publications" description={`Research publications by ${SITE.author}`}>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title" style="margin-bottom: 20px;"><i class="fa-solid fa-file-lines cv-section-icon" aria-hidden="true"></i>Publications</h1>
+      {SITE.scholar && (
+        <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;">
+          You can also find my citations and papers on <a href={SITE.scholar} target="_blank" rel="noopener noreferrer">Google Scholar <i class="fa-brands fa-google-scholar"></i></a>.
+        </p>
+      )}
+    </header>
+
+    <div class="post-content">
+      <ul class="publication-list">
+        {PUBLICATIONS.map((pub) => (
+          <li class="publication-item">
+            <div>
+              {pub.authors.map((author, index) => (
+                <span>
+                  {author === SITE.author ? (
+                    <span class="author-highlight">{author}</span>
+                  ) : (
+                    author
+                  )}
+                  {index < pub.authors.length - 1 ? ', ' : ''}
+                </span>
+              ))}
+              . "{pub.title}" In <em>{pub.venue}</em>, {pub.year}.
+            </div>
+
+            <div class="reference-buttons-wrapper">
+              {pub.doi && <a class="ref-button-label" href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer">DOI ↗</a>}
+              {pub.codeUrl && (
+                <a class="ref-button-label" href={pub.codeUrl} target="_blank" rel="noopener noreferrer">
+                  Code <i class="fa-brands fa-github"></i>
+                </a>
+              )}
+              {pub.bibtex && (
+                <button
+                  type="button"
+                  class="ref-button-label"
+                  data-toggle={`bibtex-${pub.id}`}
+                >
+                  BibTeX
+                </button>
+              )}
+            </div>
+
+            {pub.bibtex && (
+              <div id={`bibtex-${pub.id}`} class="collapsible-box" style="display: none;">
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+                  <button
+                    type="button"
+                    class="ref-button-label copy-btn"
+                    data-copy-target={`code-${pub.id}`}
+                  >
+                    Copy
+                  </button>
+                </div>
+                <pre><code id={`code-${pub.id}`}>{pub.bibtex}</code></pre>
+              </div>
+            )}
+
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <section id="book-chapters" style="margin-top: 3rem;">
+      <h2><i class="fa-solid fa-book-open cv-section-icon" aria-hidden="true"></i>Book Chapters</h2>
+      <ul class="publication-list">
+        {BOOK_CHAPTERS.map((chapter) => (
+          <li class="publication-item">
+            <div>
+              {chapter.authors.map((author, index) => (
+                <span>{author === SITE.author ? <span class="author-highlight">{author}</span> : author}{index < chapter.authors.length - 1 ? ', ' : ''}</span>
+              ))}. "{chapter.title}." In <em>{chapter.book}</em>, {chapter.publisher}, {chapter.year}, pp. {chapter.pages}.
+            </div>
+            <div class="reference-buttons-wrapper">
+              <a class="ref-button-label" href={`https://doi.org/${chapter.doi}`} target="_blank" rel="noopener noreferrer">DOI ↗</a>
+              <button type="button" class="ref-button-label" data-toggle={`bibtex-${chapter.id}`}>BibTeX</button>
+            </div>
+            <div id={`bibtex-${chapter.id}`} class="collapsible-box" style="display: none;">
+              <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+                <button type="button" class="ref-button-label copy-btn" data-copy-target={`code-${chapter.id}`}>Copy</button>
+              </div>
+              <pre><code id={`code-${chapter.id}`}>{chapter.bibtex}</code></pre>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="conferences" style="margin-top: 3rem;">
+      <h2><i class="fa-solid fa-microphone cv-section-icon" aria-hidden="true"></i>Conference Presentations</h2>
+      <ul class="publication-list">
+        {CONFERENCES.map((item) => (
+          <li class="publication-item">
+            <div>{item.authors.split(SITE.author).map((part, index) => (
+              <>{index > 0 && <span class="author-highlight">{SITE.author}</span>}{part}</>
+            ))}. "{item.title}."</div>
+            <div><em>{item.conference}</em> · {item.type} presentation</div>
+            <div style="color: var(--text-muted);">{item.date} · {item.venue}</div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </article>
+
+  <script is:inline>
+    // Toggle BibTeX boxes
+    document.querySelectorAll('[data-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-toggle');
+        const box = document.getElementById(targetId);
+        if (box) {
+          const isHidden = box.style.display === 'none';
+          box.style.display = isHidden ? 'block' : 'none';
+          if (isHidden) {
+            btn.style.backgroundColor = 'var(--accent)';
+            btn.style.color = '#090912';
+          } else {
+            btn.style.backgroundColor = '';
+            btn.style.color = '';
+          }
+        }
+      });
+    });
+
+    // Copy BibTeX to clipboard with visual feedback
+    document.querySelectorAll('.copy-btn').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const targetId = btn.getAttribute('data-copy-target');
+        const codeElement = document.getElementById(targetId);
+        if (codeElement) {
+          await navigator.clipboard.writeText(codeElement.textContent || '');
+          const originalText = btn.textContent;
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          btn.style.backgroundColor = 'var(--selection)';
+          btn.style.color = '#fff';
+
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.backgroundColor = '';
+            btn.style.color = '';
+          }, 1800);
+        }
+      });
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,47 @@
+export const BOOK_CHAPTERS = [
+  {
+    id: 'mazraedoost2022molecular',
+    title: 'Molecular dynamic simulation with protein and detection of repurposable drugs for COVID-19',
+    authors: ['Sargol Mazraedoost', 'Seyyed Mojtaba Mousavi', 'Kimiya Kazemi', 'Seyyed Alireza Hashemi', 'Wei-Hung Chiang', 'Ahmad Gholami', 'Navid Omidifar', 'Marziyeh Afsa', 'Aziz Babapoor', 'Maryam Zarei'],
+    book: 'Coronavirus Drug Discovery', publisher: 'Elsevier', year: 2022, pages: '273–297', doi: '10.1016/B978-0-323-95578-2.00011-X',
+    bibtex: `@incollection{mazraedoost2022molecular,
+  title={Molecular dynamic simulation with protein and detection of repurposable drugs for COVID-19},
+  author={Mazraedoost, Sargol and Mousavi, Seyyed Mojtaba and Kazemi, Kimiya and Hashemi, Seyyed Alireza and Chiang, Wei-Hung and Gholami, Ahmad and Omidifar, Navid and Afsa, Marziyeh and Babapoor, Aziz and Zarei, Maryam},
+  booktitle={Coronavirus Drug Discovery},
+  publisher={Elsevier},
+  year={2022},
+  pages={273--297},
+  doi={10.1016/B978-0-323-95578-2.00011-X}
+}`,
+  },
+  {
+    id: 'mousavi2021carbon',
+    title: 'Carbon substrates for flexible supercapacitors and energy storage applications',
+    authors: ['Seyyed Mojtaba Mousavi', 'Seyyed Alireza Hashemi', 'Najmeh Parvin', 'Chin Wei Lai', 'Sonia Bahrani', 'Wei-Hung Chiang', 'Sargol Mazraedoost'],
+    book: 'Flexible Supercapacitor Nanoarchitectonics', publisher: 'Wiley', year: 2021, pages: '95–141', doi: '10.1002/9781119711469.ch5',
+    bibtex: `@incollection{mousavi2021carbon,
+  title={Carbon substrates for flexible supercapacitors and energy storage applications},
+  author={Mousavi, Seyyed Mojtaba and Hashemi, Seyyed Alireza and Parvin, Najmeh and Lai, Chin Wei and Bahrani, Sonia and Chiang, Wei-Hung and Mazraedoost, Sargol},
+  booktitle={Flexible Supercapacitor Nanoarchitectonics},
+  publisher={Wiley},
+  year={2021},
+  pages={95--141},
+  doi={10.1002/9781119711469.ch5}
+}`,
+  },
+  {
+    id: 'raeisi2021biosurfactant',
+    title: 'Application of biosurfactant as a demulsifying and emulsifying agent in the formulation of petrochemical products',
+    authors: ['Farzad Raeisi', 'Seyyed Mojtaba Mousavi', 'Seyyed Alireza Hashemi', 'Leila Malekpour', 'Sonia Bahrani', 'Chin Wei Lai', 'Wei-Hung Chiang', 'Aziz Babapoor', 'Sargol Mazraedoost', 'Hossein Esmaeili'],
+    book: 'Green Sustainable Process for Chemical and Environmental Engineering and Science', publisher: 'Elsevier', year: 2021, pages: '399–422', doi: '10.1016/B978-0-12-823380-1.00016-2',
+    bibtex: `@incollection{raeisi2021biosurfactant,
+  title={Application of biosurfactant as a demulsifying and emulsifying agent in the formulation of petrochemical products},
+  author={Raeisi, Farzad and Mousavi, Seyyed Mojtaba and Hashemi, Seyyed Alireza and Malekpour, Leila and Bahrani, Sonia and Lai, Chin Wei and Chiang, Wei-Hung and Babapoor, Aziz and Mazraedoost, Sargol and Esmaeili, Hossein},
+  booktitle={Green Sustainable Process for Chemical and Environmental Engineering and Science},
+  publisher={Elsevier},
+  year={2021},
+  pages={399--422},
+  doi={10.1016/B978-0-12-823380-1.00016-2}
+}`,
+  },
+];

@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, EDUCATION, EXPERIENCES } from '../data/siteConfig';
+
+const universityName = 'Pukyong National University';
+---
+
+<BaseLayout title="CV" description={`Academic background of ${SITE.author}`}>
+  <article class="post prose">
+    <h1>CV</h1>
+    <p>My CV is available for download <a href="#cv" onclick="event.preventDefault()">here</a>.</p>
+    <p>You can also visit my <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn profile</a>.</p>
+
+    <section class="cv-education">
+      <h2><i class="fa-solid fa-briefcase cv-section-icon" aria-hidden="true"></i>Academic Appointments</h2>
+      {EXPERIENCES.map((experience) => (
+        <div class="cv-education-entry">
+          <strong>{experience.role}</strong>
+          <div>{experience.organization}</div>
+          <div class="cv-education-meta">{experience.location} · {experience.period}</div>
+        </div>
+      ))}
+    </section>
+
+    <section class="cv-education">
+      <h2><i class="fa-solid fa-graduation-cap cv-section-icon" aria-hidden="true"></i>Education &amp; Research</h2>
+      {EDUCATION.map((education, index) => (
+        <div class="cv-education-entry">
+          <strong>{education.degree}</strong>
+          <div class="cv-education-meta">
+            {education.institution.split(universityName).map((part, index) => (
+              <>{index > 0 && <a href={SITE.university} target="_blank" rel="noopener noreferrer">{universityName}</a>}{part}</>
+            ))} · {education.period}
+          </div>
+          {index === 0 && education.thesis && (
+            <div class="cv-dissertation">
+              <strong>Dissertation:</strong><br />
+              <em>{education.thesis}</em>
+            </div>
+          )}
+        </div>
+      ))}
+    </section>
+
+    <section class="cv-education">
+      <h2><i class="fa-solid fa-handshake cv-section-icon" aria-hidden="true"></i>Academic Service</h2>
+      <p>Peer reviewer for journals including <em>Journal of Chemical Information and Modeling</em>, <em>ACS Omega</em>, and <em>Computers in Biology and Medicine</em>.</p>
+      <p><a href={SITE.reviewerProfile} target="_blank" rel="noopener noreferrer">View my reviewer profile ↗</a></p>
+      <figure class="review-certificate">
+        <a href="/assets/cv/peer-review-certificate.png" target="_blank" rel="noopener noreferrer" aria-label="View the full-size Publons Academy peer reviewer certificate">
+          <img src="/assets/cv/peer-review-certificate.png" alt="Sargol Mazraedoost’s certificate for completing the Publons Academy Practical Peer Review course in 2020" width="1048" height="897" loading="lazy" />
+        </a>
+        <figcaption>Publons Academy Practical Peer Review course, 2020.</figcaption>
+      </figure>
+    </section>
+
+    <p><a href="/publications#conferences">View my conference presentations →</a></p>
+  </article>
+</BaseLayout>

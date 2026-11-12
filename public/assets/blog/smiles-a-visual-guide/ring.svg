@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 230" role="img" aria-labelledby="title desc">
+  <title id="title">Cyclohexane: a ring of six carbon atoms</title>
+  <desc id="desc">Each corner represents CH2. The solid pink line is the single bond closing the ring between the first and sixth carbon. This is a connectivity drawing, not the molecule's three-dimensional shape.</desc>
+  <g fill="none" stroke="#797593" stroke-width="3">
+    <path d="M240 30L318 75V165L240 210L162 165V75"/>
+    <path d="M162 75L240 30" stroke="#b4637a" stroke-width="5"/>
+  </g>
+  <g font-family="Arial,sans-serif" text-anchor="middle" fill="#575279">
+    <text x="240" y="114" font-size="24">6 carbons</text>
+    <text x="240" y="146" font-size="22">6 single bonds</text>
+  </g>
+</svg>

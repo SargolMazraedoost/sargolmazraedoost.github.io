@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PROJECTS } from '../data/siteConfig';
+---
+
+<BaseLayout title="Research" description="Research in molecular AI, chromatography, and computational protein design.">
+  <div style="margin-bottom: 2rem;">
+    <h1>Research Projects</h1>
+    <p style="color: var(--text-muted);">
+      Selected research on molecular prediction and computational drug design.
+    </p>
+  </div>
+
+  <div class="project-grid">
+    {PROJECTS.map((project) => (
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">
+            {project.title}
+          </div>
+          {project.year && (
+            <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-dim);">
+              {project.year}
+            </span>
+          )}
+        </div>
+        <p style="margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--text-muted);">
+          {project.description}
+        </p>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <div class="project-tags">
+            {project.tags.map((tag) => (
+              <span class="project-tag">{tag}</span>
+            ))}
+          </div>
+          <div style="display: flex; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.85rem;">
+            {project.paperUrl && (
+              <a href={project.paperUrl} target="_blank" rel="noopener noreferrer">
+                Paper ↗
+              </a>
+            )}
+            {project.githubUrl && (
+              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                Source ↗
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</BaseLayout>
