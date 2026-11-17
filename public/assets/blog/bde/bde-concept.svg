@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" role="img" aria-labelledby="title desc">
+  <title id="title">Bond dissociation energy, sketched out</title>
+  <desc id="desc">A chain with a weak link, homolytic cleavage into radicals, a comparison of bond energies, and an antioxidant donating hydrogen.</desc>
+  <defs>
+    <style>
+      text { font-family: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive; fill: #373044 }
+      .title { font-size: 27px; font-weight: bold }
+      .heading { font-size: 19px; font-weight: bold }
+      .body { font-size: 15px }
+      .small { font-size: 13px }
+      .ink { fill: none; stroke: #51455e; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round }
+      .purple { stroke: #8067a5 }
+      .red { stroke: #c76461 }
+      .green { stroke: #648d77 }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#8067a5" stroke-width="1.5" stroke-linecap="round"/></marker>
+  </defs>
+  <rect width="960" height="620" fill="#fffdf8"/>
+  <path d="M29 24 Q260 18 480 25 T931 23 L935 593 Q720 600 484 594 T25 596 Z" fill="none" stroke="#d8cfc1" stroke-width="2"/>
+  <path d="M34 29 Q300 23 560 29 T926 28 M30 591 Q300 596 520 590 T929 590" fill="none" stroke="#eee7dc" stroke-width="1"/>
+  <text x="51" y="63" class="title">Bond dissociation energy</text>
+  <text x="53" y="86" class="body" fill="#8067a5">The energy it takes to break a bond into radicals</text>
+  <path d="M52 94 Q220 99 397 94" class="ink purple" stroke-width="1.5"/>
+
+  <!-- loose panel dividers -->
+  <path d="M485 112 Q480 224 486 328 M42 337 Q264 331 477 337 T920 334 M586 354 Q581 477 587 574" fill="none" stroke="#ded5ca" stroke-width="2" stroke-dasharray="5 7"/>
+
+  <text x="54" y="128" class="heading">1. Think of a weak link</text>
+  <text x="54" y="151" class="small">A lower BDE means a bond needs less energy to break.</text>
+  <g transform="translate(72 180)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+    <path d="M17 4 C-6 1 -7 34 16 35 L44 34 C64 33 64 3 44 4 Z" stroke="#8d8195"/>
+    <path d="M53 4 C30 2 29 35 52 35 L80 34 C101 33 100 3 80 4 Z" stroke="#8d8195"/>
+    <path d="M91 3 C70 0 68 35 91 36 L118 35 C139 34 140 3 118 3 Z" stroke="#c76461"/>
+    <path d="M128 4 C106 1 105 35 128 35 L156 34 C177 33 176 3 156 4 Z" stroke="#8d8195"/>
+    <path d="M165 4 C143 2 142 35 165 35 L193 34 C214 33 213 3 193 4 Z" stroke="#8d8195"/>
+    <path d="M100 8 l7 10 -7 11 M110 7 l-5 11 7 11" stroke="#c76461" stroke-width="2"/>
+  </g>
+  <path d="M179 234 Q179 247 160 255" class="ink red"/>
+  <text x="68" y="273" class="body" fill="#b65050">the weak link</text>
+  <text x="54" y="307" class="small">For example, a benzylic C–H bond in toluene</text>
+  <text x="54" y="325" class="small">is weaker than an aromatic C–H bond.</text>
+  <g transform="translate(344 200)" class="ink purple">
+    <path d="M0 22 L25 7 L51 22 L51 51 L26 66 L0 51 Z"/>
+    <path d="M9 26 L25 17 M42 26 L42 47 M9 47 L25 56" stroke-width="1.4"/>
+    <path d="M25 7 L25 -14"/>
+  </g>
+  <text x="354" y="180" class="body">CH₃</text>
+  <text x="349" y="290" class="small">toluene</text>
+
+  <text x="510" y="128" class="heading">2. Split the bond evenly</text>
+  <text x="510" y="151" class="small">Each fragment takes one of the shared electrons.</text>
+  <g transform="translate(530 191)">
+    <path d="M1 22 C0 8 10 0 23 1 C36 0 46 9 45 22 C46 35 36 45 23 44 C10 45 0 35 1 22 Z" fill="#eee8f5" stroke="#8067a5" stroke-width="2"/>
+    <text x="16" y="28" class="heading">R</text>
+    <path d="M49 22 Q76 20 103 22" class="ink"/>
+    <circle cx="71" cy="22" r="3" fill="#c76461"/><circle cx="82" cy="22" r="3" fill="#c76461"/>
+    <path d="M107 22 C106 8 116 0 129 1 C142 0 152 9 151 22 C152 35 142 45 129 44 C116 45 106 35 107 22 Z" fill="#f9e8df" stroke="#c76461" stroke-width="2"/>
+    <text x="121" y="28" class="heading">H</text>
+    <path d="M174 22 Q199 18 224 22" class="ink purple" marker-end="url(#arrow)"/>
+    <text x="174" y="4" class="small">energy in</text>
+    <text x="241" y="29" class="heading">R•  +  H•</text>
+  </g>
+  <path d="M784 247 Q817 257 854 249" class="ink red" stroke-width="1.5"/>
+  <text x="735" y="275" class="body">two radicals</text>
+  <text x="510" y="310" class="small">This even split is called homolytic cleavage.</text>
+
+  <text x="54" y="370" class="heading">3. A rough bond-strength ladder</text>
+  <text x="54" y="392" class="small">Typical BDEs in kcal/mol; values vary with the molecule.</text>
+  <!-- Hand-drawn bars share a zero baseline and are proportional to BDE. -->
+  <path d="M254 410 Q251 478 254 549" fill="none" stroke="#a99eaa" stroke-width="1.5"/>
+  <g class="body">
+    <text x="59" y="433">Aromatic C–H</text>
+    <path d="M256 416 Q353 413 450 416 L449 436 Q352 438 256 435 Z" fill="#dbece0" stroke="#648d77" stroke-width="1.6"/>
+    <text x="465" y="433">~111</text>
+
+    <text x="59" y="465">Alkane C–H</text>
+    <path d="M256 448 Q347 445 437 449 L436 468 Q346 471 256 467 Z" fill="#e1e6f1" stroke="#8993ad" stroke-width="1.6"/>
+    <text x="450" y="465">~101–105</text>
+
+    <text x="59" y="497">Benzylic C–H</text>
+    <path d="M256 480 Q335 477 414 480 L413 500 Q334 502 256 499 Z" fill="#f8e9c8" stroke="#c2a363" stroke-width="1.6"/>
+    <text x="428" y="497">~90</text>
+
+    <text x="59" y="529">Peroxide O–O</text>
+    <path d="M256 512 Q289 509 322 512 L321 532 Q288 534 256 531 Z" fill="#f5dcd5" stroke="#c76461" stroke-width="1.6"/>
+    <text x="336" y="529">~38</text>
+  </g>
+  <text x="59" y="568" class="small">less energy to break</text>
+  <path d="M232 563 Q330 558 423 563" class="ink purple" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <text x="431" y="568" class="small">more energy</text>
+
+  <text x="611" y="370" class="heading">4. An antioxidant at work</text>
+  <text x="611" y="395" class="small">Vitamin E can donate a hydrogen</text>
+  <text x="611" y="413" class="small">to a reactive radical.</text>
+  <path d="M637 443 Q667 431 696 444 L696 481 Q690 503 667 514 Q644 501 637 481 Z" fill="#f7edc9" stroke="#b79b52" stroke-width="2.3" stroke-linejoin="round"/>
+  <path d="M643 449 Q668 440 690 449 M644 480 Q648 495 667 506" fill="none" stroke="#d4bd7b" stroke-width="1.5"/>
+  <text x="647" y="475" class="body">Vit E</text>
+  <path d="M711 470 Q742 464 770 469" class="ink purple" marker-end="url(#arrow)"/>
+  <text x="726" y="457" class="body">H</text>
+  <text x="783" y="475" class="heading">radical •</text>
+  <text x="611" y="542" class="small">The radical is quenched; the resulting</text>
+  <text x="611" y="560" class="small">vitamin E radical is resonance-stabilized.</text>
+</svg>
